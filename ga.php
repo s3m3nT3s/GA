@@ -1,7 +1,7 @@
 <?php
 
 
-$GA = "XX-XXXXXXXX-X";
+$GA = "XX-XXXXXXXX-X"; // insert your Google Analytics ID Here
 
 
 if (isset($_COOKIE['RGB-Color'])) {
