@@ -14,7 +14,6 @@ if (isset($_COOKIE['RGB-Color'])) {
 };
 
 
-$ip = '';
 if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
 	$ip = $_SERVER['HTTP_CLIENT_IP'];
 } elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
@@ -30,9 +29,10 @@ $ua = urlencode($_SERVER['HTTP_USER_AGENT']);
 $dp = (basename($_SERVER['PHP_SELF']));
 
 
-$ref = '';
 if (!empty($_SERVER['HTTP_REFERER'])) {
 	$ref = $_SERVER['HTTP_REFERER'];
+} else {
+	$ref = '';
 };
 
 $url = 'https://www.google-analytics.com/collect?v=1&t=pageview&tid='.$GA.'&cid='.$sessid.'&uip='.$ip.'&ua='.$ua.'&dp='.$dp.'&dr='.$ref;
